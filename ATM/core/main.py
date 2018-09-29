@@ -106,9 +106,40 @@ def interactive(acc_data):
         else:
             print('\33[31;1mSelect is not exist !\033[0m')
 
-
-def run():
+def atm_user():
     acc_data = auth.acc_login(user_data, access_logger)
     if user_data['is_auth']:
         user_data['account_data'] = acc_data
         interactive(user_data)
+
+def atm_manger():
+    acc_data = auth.acc_login(user_data, access_logger)
+    if user_data['is_auth']:
+        user_data['account_data'] = acc_data
+        interactive(user_data)
+
+def exites():
+    exit()
+
+def run():
+    print('Wellcome to Credit center!'.center(50, '-'))
+    menu = u'''\33[32;1m
+        1、  用户登陆
+        2、  信用卡管理中心
+        \033[0m
+    '''
+    menu_dic = {
+        '1': atm_user,
+        '2': atm_manger,
+        'q': exites
+    }
+    exit_flag = True
+    while exit_flag:
+        print(menu)
+        choice = input('>>: ').strip()
+        if len(choice) == 0: continue
+        if choice in menu_dic:
+             menu_dic.get(choice)()
+        else:
+            print('\33[31;1mSelect is not exist !\033[0m')
+
