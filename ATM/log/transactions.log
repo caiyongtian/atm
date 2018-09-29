@@ -1,0 +1,6 @@
+
+2018-09-29 21:58:58,171 transaction.py[line:28] INFO account： 000000,action: repay,amount: 100.0,interest: 0.0
+2018-09-29 21:59:10,528 transaction.py[line:28] INFO account： 000000,action: withdraw,amount: 100.0,interest: 5.0
+2018-09-29 22:00:11,445 transaction.py[line:28] INFO account： 000000,action: repay,amount: 5.0,interest: 0.0
+2018-09-29 22:00:18,620 transaction.py[line:28] INFO account： 000000,action: repay,amount: 0.0,interest: 0.0
+2018-09-29 22:00:22,141 transaction.py[line:28] INFO account： 000000,action: withdraw,amount: 0.0,interest: 0.0
