@@ -2,6 +2,7 @@ from core import auth
 from core import logger
 from core import accounts
 from core import transaction
+from core import manager
 
 user_data = {
     'is_auth': False,
@@ -116,16 +117,17 @@ def atm_manger():
     acc_data = auth.acc_login(user_data, access_logger)
     if user_data['is_auth']:
         user_data['account_data'] = acc_data
-        interactive(user_data)
+        manager.mg_interactive()
 
 def exites():
     exit()
 
 def run():
-    print('Wellcome to Credit center!'.center(50, '-'))
+    print('Wellcome to Credit center'.center(50, '-'))
     menu = u'''\33[32;1m
-        1、  用户登陆
-        2、  信用卡管理中心
+        1、  用户中心
+        2、  管理中心
+        q、  退出
         \033[0m
     '''
     menu_dic = {
